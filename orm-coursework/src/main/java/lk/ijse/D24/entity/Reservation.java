@@ -1,9 +1,6 @@
 package lk.ijse.D24.entity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.sql.Date;
 
@@ -12,26 +9,27 @@ public class Reservation {
     @Id
     private String resId;
     private Date resDate;
-    private String studentId;
-    private String roomType;
-    private double keyMoney;
+    private double payedKeyMoney;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Student student;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Room room;
 
     public Reservation() {
     }
 
-    public Reservation(String resId, Date resDate, String studentId, String roomType, double keyMoney, Student student) {
+    public Reservation(String resId, Date resDate, double payedKeyMoney, Student student, Room room) {
         this.resId = resId;
         this.resDate = resDate;
-        this.studentId = studentId;
-        this.roomType = roomType;
-        this.keyMoney = keyMoney;
+        this.payedKeyMoney = payedKeyMoney;
         this.student = student;
+        this.room = room;
     }
 
-    public String getResId() {        return resId;
+    public String getResId() {
+        return resId;
     }
 
     public void setResId(String resId) {
@@ -46,31 +44,27 @@ public class Reservation {
         this.resDate = resDate;
     }
 
-    public String getStudentId() {
-        return studentId;
+    public double getPayedKeyMoney() {
+        return payedKeyMoney;
     }
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
+    public void setPayedKeyMoney(double payedKeyMoney) {
+        this.payedKeyMoney = payedKeyMoney;
     }
 
-    public String getRoomType() {
-        return roomType;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setRoomType(String roomType) {
-        this.roomType = roomType;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
-    public double getKeyMoney() {
-        return keyMoney;
+    public Room getRoom() {
+        return room;
     }
 
-    public void setKeyMoney(double keyMoney) {
-        this.keyMoney = keyMoney;
+    public void setRoom(Room room) {
+        this.room = room;
     }
-
-    public Student getStudent() { return student; }
-
-    public void setStudent(Student student) { this.student = student; }
 }

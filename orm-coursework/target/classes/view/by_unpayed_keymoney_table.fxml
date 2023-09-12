@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paymentDetailPane" prefHeight="790.0" prefWidth="1536.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24.controller.UnpayedKeymoneyTableController">
+   <children>
+      <AnchorPane layoutY="230.0" prefHeight="469.0" prefWidth="1536.0">
+         <children>
+            <TableView fx:id="tblPaymentDetail" layoutX="86.0" layoutY="209.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="1360.0">
+               <columns>
+                  <TableColumn fx:id="clmStudentId" minWidth="119.0" prefWidth="170.0" text="STUDENT ID" />
+                  <TableColumn fx:id="clmName" minWidth="119.0" prefWidth="170.0" text="NAME" />
+                  <TableColumn fx:id="clmRoomId" minWidth="119.0" prefWidth="170.0" text="ROOM ID" />
+                  <TableColumn fx:id="clmTotalKeyMoney" minWidth="119.0" prefWidth="170.0" text="TOTAL KEY MONEY " />
+                  <TableColumn fx:id="clmPayedKeyMoney" minWidth="119.0" prefWidth="170.0" text="PAYED AMOUNT" />
+                  <TableColumn fx:id="clmRemainKeyMoney" minWidth="119.0" prefWidth="170.0" text="REMAIN AMOUNT" />
+                  <TableColumn fx:id="clmReservationId" minWidth="119.0" prefWidth="170.0" text="RESERVATION ID" />
+               </columns>
+            </TableView>
+            <TextField fx:id="txtSeach" layoutX="178.0" layoutY="6.0" onKeyTyped="#typesOnSearchBar" onMouseClicked="#clickedOnSearchBar" prefHeight="45.0" prefWidth="450.0" promptText="   enter student Id here" />
+            <JFXButton layoutX="80.0" layoutY="6.0" onAction="#btnSeacrByReservationIdOnAction" prefHeight="45.0" prefWidth="100.0" style="-fx-background-color: #30A2FF;" text="SEACH" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="895.0" layoutY="6.0" onAction="#btnFilterOnAction" prefHeight="45.0" prefWidth="100.0" style="-fx-background-color: #30A2FF;" text="FILTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <ComboBox fx:id="cmbFilter" layoutX="994.0" layoutY="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="45.0" prefWidth="450.0" promptText="Select Filter Title" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="txtAddBalanceToKeyMoney" layoutX="711.0" layoutY="144.0" prefHeight="54.0" prefWidth="300.0" promptText="Add Balance To Key Money" />
+      <JFXButton layoutX="1141.0" layoutY="144.0" onAction="#btnAddBalanceToKeyMoney" prefHeight="54.0" prefWidth="300.0" style="-fx-background-color: #30A2FF;" text="Add Balance To Key Money" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lblRoomId" alignment="CENTER" layoutX="389.0" layoutY="144.0" prefHeight="54.0" prefWidth="300.0" style="-fx-border-color: lightblue;" text="Room Id" />
+      <Label fx:id="lblReservationId" alignment="CENTER" layoutX="61.0" layoutY="144.0" prefHeight="54.0" prefWidth="300.0" style="-fx-border-color: lightblue;" text="Reservation Id" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="1536.0" style="-fx-background-color: #00C4FF;" text="Still KeyMoney Paying Students" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="50.0" fitWidth="72.0" layoutX="24.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-arrow-48.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="19.0" layoutY="9.0" onAction="#btnBackOnAction" prefHeight="50.0" prefWidth="60.0" text="." />
+   </children>
+</AnchorPane>

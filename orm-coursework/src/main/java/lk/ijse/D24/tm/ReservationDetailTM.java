@@ -14,11 +14,12 @@ public class ReservationDetailTM {
     private LocalDate dob;
     private String address;
     private int contactNo;
+    private String roomId;
 
     public ReservationDetailTM() {
     }
 
-    public ReservationDetailTM(String resId, String studentId, String studentName, Date resDate, String roomType, double keyMoney, String gender, LocalDate dob, String address, int contactNo) {
+    public ReservationDetailTM(String resId, String studentId, String studentName, Date resDate, String roomType, double keyMoney, String gender, LocalDate dob, String address, int contactNo, String roomId) {
         this.resId = resId;
         this.studentId = studentId;
         this.studentName = studentName;
@@ -29,6 +30,7 @@ public class ReservationDetailTM {
         this.dob = dob;
         this.address = address;
         this.contactNo = contactNo;
+        this.roomId = roomId;
     }
 
     public String getResId() {
@@ -110,4 +112,13 @@ public class ReservationDetailTM {
     public void setContactNo(int contactNo) {
         this.contactNo = contactNo;
     }
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
 }

@@ -13,7 +13,7 @@ public interface CrudDAO<T,id> extends SuperDAO {
 
     void update(T entity);
 
-    Student search(String id);
+    T search(String id);
 
-    List<Reservation> getAll();
+    List<T> getAll();
 }

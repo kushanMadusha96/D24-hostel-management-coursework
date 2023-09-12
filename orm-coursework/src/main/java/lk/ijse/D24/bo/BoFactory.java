@@ -1,8 +1,6 @@
 package lk.ijse.D24.bo;
 
-import lk.ijse.D24.bo.impl.ReservationBoImpl;
-import lk.ijse.D24.bo.impl.RoomBoImpl;
-import lk.ijse.D24.bo.impl.StudentBoImpl;
+import lk.ijse.D24.bo.impl.*;
 
 public class BoFactory {
     private static BoFactory boFactory;
@@ -15,7 +13,7 @@ public class BoFactory {
     }
 
     public enum BoTypes {
-        STUDENT, ROOM,RESERVATION
+        STUDENT, ROOM,RESERVATION,PAYMENT,REGISTER
     }
 
     public SuperBo getBo(BoTypes boType) {
@@ -26,6 +24,10 @@ public class BoFactory {
                 return new RoomBoImpl();
             case RESERVATION:
                 return new ReservationBoImpl();
+            case PAYMENT:
+                return new PaymentBOImpl();
+            case REGISTER:
+                return new RegisterBOImpl();
             default:
                 return null;
         }

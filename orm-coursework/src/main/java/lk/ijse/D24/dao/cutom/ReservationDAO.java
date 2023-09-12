@@ -8,4 +8,5 @@ public interface ReservationDAO extends CrudDAO<Reservation,String> {
 
     String getLastReseavationId();
 
+    void addMoneyToKeyMoney(String roomId, double amount);
 }

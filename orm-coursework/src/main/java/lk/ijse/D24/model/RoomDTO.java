@@ -1,20 +1,23 @@
 package lk.ijse.D24.model;
 
+import lk.ijse.D24.entity.Student;
+
+import java.util.List;
+
 public class RoomDTO {
     private String roomTypeId;
     private String roomType;
     private double keyMoney;
-    private int qty;
 
     public RoomDTO() {
     }
 
-    public RoomDTO(String roomTypeId, String roomType, double keyMoney, int qty) {
+    public RoomDTO(String roomTypeId, String roomType, double keyMoney) {
         this.roomTypeId = roomTypeId;
         this.roomType = roomType;
         this.keyMoney = keyMoney;
-        this.qty = qty;
     }
+
 
     public String getRoomTypeId() {
         return roomTypeId;
@@ -38,13 +41,5 @@ public class RoomDTO {
 
     public void setKeyMoney(double keyMoney) {
         this.keyMoney = keyMoney;
-    }
-
-    public int getQty() {
-        return qty;
-    }
-
-    public void setQty(int qty) {
-        this.qty = qty;
     }
 }

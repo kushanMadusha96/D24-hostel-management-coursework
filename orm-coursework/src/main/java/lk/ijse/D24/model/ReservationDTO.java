@@ -1,10 +1,6 @@
 package lk.ijse.D24.model;
 
-import jakarta.persistence.ManyToOne;
-import lk.ijse.D24.entity.Student;
-
 import java.sql.Date;
-import java.time.LocalDate;
 
 public class ReservationDTO {
     private String resId;
@@ -12,16 +8,18 @@ public class ReservationDTO {
     private Date resDate;
     private String roomType;
     private double keyMoney;
+    private String roomId;
 
     public ReservationDTO() {
     }
 
-    public ReservationDTO(String resId, String studentId, Date resDate, String roomType, double keyMoney) {
+    public ReservationDTO(String resId, String studentId, Date resDate, String roomType, double keyMoney, String roomId) {
         this.resId = resId;
         this.studentId = studentId;
         this.resDate = resDate;
         this.roomType = roomType;
         this.keyMoney = keyMoney;
+        this.roomId = roomId;
     }
 
     public String getResId() {
@@ -63,4 +61,13 @@ public class ReservationDTO {
     public void setKeyMoney(double keyMoney) {
         this.keyMoney = keyMoney;
     }
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
 }
